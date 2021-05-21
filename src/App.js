@@ -12,13 +12,31 @@ class App extends Component {
       { id: 4, value: 0 },
     ],
   };
+
+  handleIncrement = () => {
+    console.log("Increment Clicked!");
+  };
+
+  handleDecrement = () => {
+    console.log("Decrement Clicked!");
+  };
+
+  handleDelete = () => {
+    console.log("Delete Clicked!");
+  };
+
   render() {
     const { counters } = this.state;
 
     return (
       <div className="App">
         <Navbar />
-        <Counters counters={counters} />
+        <Counters
+          counters={counters}
+          onIncrement={this.handleIncrement}
+          onDecrement={this.handleDecrement}
+          onDelete={this.handleDelete}
+        />
       </div>
     );
   }
