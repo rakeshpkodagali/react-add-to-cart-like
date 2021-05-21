@@ -25,19 +25,28 @@ class App extends Component {
     console.log("Delete Clicked!");
   };
 
+  handleReset = () => {
+    console.log("Reset Clicked");
+  };
+
   render() {
     const { counters } = this.state;
 
     return (
-      <div className="App">
+      <React.Fragment>
         <Navbar />
-        <Counters
-          counters={counters}
-          onIncrement={this.handleIncrement}
-          onDecrement={this.handleDecrement}
-          onDelete={this.handleDelete}
-        />
-      </div>
+        <main className="container">
+          <button onClick={this.handleReset} className="btn btn-primary">
+            Reset
+          </button>
+          <Counters
+            counters={counters}
+            onIncrement={this.handleIncrement}
+            onDecrement={this.handleDecrement}
+            onDelete={this.handleDelete}
+          />
+        </main>
+      </React.Fragment>
     );
   }
 }
