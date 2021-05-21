@@ -22,7 +22,11 @@ class App extends Component {
   };
 
   handleDecrement = (counterRecord) => {
-    console.log("Decrement Clicked!: ", counterRecord);
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(counterRecord);
+    counters[index] = { ...counterRecord };
+    counters[index].value--;
+    this.setState({ counters });
   };
 
   handleDelete = (counterRecord) => {
