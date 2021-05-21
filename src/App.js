@@ -34,7 +34,11 @@ class App extends Component {
   };
 
   handleReset = () => {
-    console.log("Reset Clicked");
+    const counters = this.state.counters.map((counter) => {
+      counter.value = 0;
+      return counter;
+    });
+    this.setState({ counters });
   };
 
   render() {
