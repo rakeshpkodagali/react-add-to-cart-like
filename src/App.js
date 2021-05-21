@@ -30,7 +30,10 @@ class App extends Component {
   };
 
   handleDelete = (counterRecord) => {
-    console.log("Delete Clicked!: ", counterRecord);
+    const counters = this.state.counters.filter(
+      (counter) => counter.id !== counterRecord.id
+    );
+    this.setState({ counters });
   };
 
   handleReset = () => {
@@ -48,7 +51,11 @@ class App extends Component {
       <React.Fragment>
         <Navbar />
         <main className="container">
-          <button onClick={this.handleReset} className="btn btn-primary">
+          <button
+            onClick={this.handleReset}
+            className="btn btn-primary"
+            style={{ marginTop: 15 }}
+          >
             Reset
           </button>
           <Counters
