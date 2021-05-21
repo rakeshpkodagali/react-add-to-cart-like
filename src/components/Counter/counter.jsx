@@ -13,13 +13,14 @@ const Counter = ({ counter, onIncrement, onDecrement, onDelete }) => {
       <span className={badgeClasses}>{counter.value}</span>
       <button
         onClick={() => onIncrement(counter)}
-        className="btn btn-primary m-2"
+        className="btn btn-secondary m-2"
       >
         +
       </button>
       <button
         onClick={() => onDecrement(counter)}
-        className="btn btn-primary m-2"
+        className="btn btn-secondary m-2"
+        disabled={counter.value > 0 ? false : true}
       >
         -
       </button>
