@@ -13,16 +13,20 @@ class App extends Component {
     ],
   };
 
-  handleIncrement = () => {
-    console.log("Increment Clicked!");
+  handleIncrement = (counterRecord) => {
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(counterRecord);
+    counters[index] = { ...counterRecord };
+    counters[index].value++;
+    this.setState({ counters });
   };
 
-  handleDecrement = () => {
-    console.log("Decrement Clicked!");
+  handleDecrement = (counterRecord) => {
+    console.log("Decrement Clicked!: ", counterRecord);
   };
 
-  handleDelete = () => {
-    console.log("Delete Clicked!");
+  handleDelete = (counterRecord) => {
+    console.log("Delete Clicked!: ", counterRecord);
   };
 
   handleReset = () => {

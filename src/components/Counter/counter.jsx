@@ -11,13 +11,19 @@ const Counter = ({ counter, onIncrement, onDecrement, onDelete }) => {
   return (
     <div>
       <span className={badgeClasses}>{counter.value}</span>
-      <button onClick={onIncrement} className="btn btn-primary m-2">
+      <button
+        onClick={() => onIncrement(counter)}
+        className="btn btn-primary m-2"
+      >
         +
       </button>
-      <button onClick={onDecrement} className="btn btn-primary m-2">
+      <button
+        onClick={() => onDecrement(counter)}
+        className="btn btn-primary m-2"
+      >
         -
       </button>
-      <button onClick={onDelete} className="btn btn-danger m-2">
+      <button onClick={() => onDelete(counter)} className="btn btn-danger m-2">
         X
       </button>
     </div>
